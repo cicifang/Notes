@@ -1,6 +1,6 @@
 ### 1.functional 函数式编程
 
-> 更加抽象 贴近计算 (汇编贴近计算机)
+更加抽象 贴近计算 (汇编贴近计算机)
 
 **特点**：
 把计算视为函数而非指令
@@ -29,7 +29,7 @@ def add(x, y, f)
 14
 ```
 
-**map()函数**：
+**map()函数**
 *demo*1:
 
 ```python
@@ -96,7 +96,7 @@ def is_not_empty(s):
 ['test', 'str', 'END']
 ```
 
-*demo2*:
+*demo3*:
 
 ```python
 import math
