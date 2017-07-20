@@ -1,6 +1,10 @@
-### 1.functional 函数式编程
+[TOC]
 
-> 更加抽象 贴近计算 (汇编贴近计算机)
+### 介绍
+
+#### Functional 函数式编程
+
+更加抽象 贴近计算 (汇编贴近计算机)
 
 **特点**：
 把计算视为函数而非指令
@@ -13,12 +17,16 @@
 支持闭包：有了闭包就能返回函数
 有限度地支持匿名函数
 
-### 2.高阶函数
+#### Python高阶函数
 
 变量可以指向一个函数
 函数名 就是指向函数的一个变量 和普通变量没有区别
 
-**高阶函数**：能接受函数作为参数的函数
+
+
+### 高阶函数
+
+能接受函数作为参数的函数
 
 *demo*：
 
@@ -30,7 +38,7 @@ def add(x, y, f)
 14
 ```
 
-**map()函数**：
+#### map()函数
 
 *demo*1:
 
@@ -51,7 +59,7 @@ def format_name(s):
 print map(format_name, ['adam', 'LISA', 'barT'])
 ```
 
-**reduce()函数**：
+#### reduce()函数
 
 接收的参数和map()类似，一个函数f，一个list。
 但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果
@@ -74,7 +82,8 @@ def prod(x, y):  #求积函数
 print reduce(prod, [2, 4, 5, 7, 12])
 ```
 
-**filter()函数**：
+#### filter()函数
+
 fileter()函数接收一个函数f和一个list，函数f的作用是对list中每一个元素进行判断，返回True或False
 filter()根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新list
 
@@ -109,7 +118,8 @@ def is_sqr(x):
 >>>filter(is_sqr, range(1, 101))
 ```
 
-**sorted()函数**：
+#### sorted()函数
+
 sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，
 比较函数的定义是，传入两个待比较的元素 x, y；
 如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0
@@ -130,7 +140,9 @@ def reversed_cmp(x, y): #实现倒序
 ['Credit', 'Zoo', 'about', 'bob']
 ```
 
-**python中返回函数**：
+
+
+### python中返回函数
 
 *demo1*：
 
@@ -158,8 +170,8 @@ call g()...   # 调用x()就是执行g()函数定义的代码
 
 
 
+### python中闭包
 
-**python中闭包**：
 内层函数引用了外层函数的变量（参数也算是变量），然后返回内层函数的情况，称为闭包（Closure)。
 
 闭包的特点是返回的函数还引用了外层函数的局部变量（比如for循环中的i），
@@ -207,7 +219,9 @@ print f1(), f2(), f3()
 ```
 
 
-**python中的匿名函数**：
+
+### python中的匿名函数
+
 高阶函数可以接收函数做参数，有些时候，我们不需要显式地定义函数，直接传入匿名函数更方便
 
 ```python
@@ -229,7 +243,8 @@ def f(x):
 返回函数的时候，也可以返回匿名函数
 
 
-**python中的decorator装饰器**：
+
+### python中的decorator装饰器
 
 装饰器的作用:
 打印日志： @log
@@ -237,7 +252,7 @@ def f(x):
 数据库事物：@transaction
 URL路由：@post('/register')
 
-##### 1).无参数的decorator
+#### 1).无参数的decorator
 
 *demo1*: 
 
@@ -279,7 +294,7 @@ def factorial(n):
 print factorial(10)
 ```
 
-##### 2).有参数的decorator（三层嵌套decorator）
+#### 2).有参数的decorator（三层嵌套decorator）
 
 带参数的log函数首先返回一个decorator函数，再让这个decorator函数接收my_func并返回新函数
 
@@ -330,7 +345,7 @@ def factorial(n):
 print factorial(10)
 ```
 
-##### 3).完善decorator#####
+#### 3).完善decorator
 
 Python内置的functools可以用来自动化完成这个“复制”函数属性的任务
 
@@ -345,7 +360,10 @@ def log(f):
 	return wrapper
 ```
 
-**python中的偏函数**:
+
+
+### python中的偏函数
+
 functools.partial就是帮助我们创建一个偏函数
 把一个参数多的函数变成一个参数少的新函数，少的参数需要在创建时指定默认值
 functools.partial(函数名，固定参数)
@@ -379,7 +397,9 @@ print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
 ```
 
 
-**python 中的模块和包**:
+
+### python 中的模块和包
+
  每个包中必须有__init__.py文件
 
  *动态导入模块*：
@@ -391,7 +411,9 @@ print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
     from StringIO import StringIO
 ```
 
-**python中限制访问**：
+
+
+### python中限制访问
 
  Python对属性权限的控制是通过属性名来实现的，
  如果一个属性由双下划线开头(__)，该属性就无法被外部访问。
@@ -405,8 +427,11 @@ print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
 以单下划线开头的属性"_xxx"虽然也可以被外部访问，但是，按照习惯，他们不应该被外部访问。
 
 
-**python 定义类**
+
+### python 定义类
+
 当创建实例时，__init__()方法被自动调用
+
 ```Python
 class Person(object):
     def __init__(self, name, gender, birth, job):
@@ -477,11 +502,13 @@ print p1.get_grade()
 ```
 
 
-**python中定义类方法**：
+
+### python中定义类方法
+
 和属性类似，方法也分实例方法和类方法
 可以通过类方法获取类的私有属性
 
-##### 1)继承：
+#### 1).继承
 
 继承树从object开始
 继承是is关系
@@ -504,7 +531,7 @@ def init(self, args):
 一个父类的实例不能是子类类型，因为子类比父类多了一些属性和方法
 一个实例可以看成它本身的类型，也可以看成它父类的类型
 
-##### 2)多态：
+#### 2).多态
 
 当实例调用某一个方法时总是先查找自身的定义，
 如果没有定义，则顺着继承链向上查找，直到在某个父类中找到为止
@@ -525,7 +552,7 @@ s = Students()
 print json.load(s)
 ```
 
-##### 3)多重继承:
+#### 3).多重继承
 
 python获取对象信息：
 type() 函数获取变量的类型
@@ -545,7 +572,10 @@ print p.age
 print p.course
 ```
 
-**特殊方法**：
+
+
+### 特殊方法
+
 任何数据类型的实例都有一个特殊方法`  __str__()`
 
 `print lst` <=> `print lst.__str__()`
