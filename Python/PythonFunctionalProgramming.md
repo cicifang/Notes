@@ -24,6 +24,7 @@
 
 
 
+
 ### 高阶函数
 
 能接受函数作为参数的函数
@@ -39,7 +40,6 @@ def add(x, y, f)
 ```
 
 #### map()函数
-
 *demo*1:
 
 ```python
@@ -63,7 +63,8 @@ print map(format_name, ['adam', 'LISA', 'barT'])
 
 接收的参数和map()类似，一个函数f，一个list。
 但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果
-*demo1*：
+
+*demo1*:
 
 ```python
 def f(x, y):
@@ -108,7 +109,7 @@ def is_not_empty(s):
 ['test', 'str', 'END']
 ```
 
-*demo2*:
+*demo3*:
 
 ```python
 import math
@@ -142,8 +143,8 @@ def reversed_cmp(x, y): #实现倒序
 
 
 
-### python中返回函数
 
+### python中返回函数
 *demo1*：
 
 ```python
@@ -274,7 +275,7 @@ def factorial(n):  #阶乘
 print factorial(10)
 ```
 
-*demo1*：
+*demo2*：
 
 ```python
 #计算函数调用的时间可以记录调用前后的当前时间戳，然后计算两个时间戳的差
@@ -428,8 +429,8 @@ print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
 
 
 
-### python 定义类
 
+### python 定义类
 当创建实例时，__init__()方法被自动调用
 
 ```Python
@@ -574,8 +575,8 @@ print p.course
 
 
 
-### 特殊方法
 
+### 特殊方法
 任何数据类型的实例都有一个特殊方法`  __str__()`
 
 `print lst` <=> `print lst.__str__()`
@@ -634,9 +635,7 @@ class Student(object):
         self.__score = score
 ```
 
- 注意: 第一个score(self)是get方法，用@property装饰，
- 	   第二个score(self, score)是set方法，用@score.setter装饰，
-​	   @score.setter是前一个@property装饰后的副产品。
+ 注意: 第一个score(self)是get方法，用@property装饰，第二个score(self, score)是set方法，用@score.setter装饰，@score.setter是前一个@property装饰后的副产品。
 
 ```python
 >>> s = Student('Bob', 59)
