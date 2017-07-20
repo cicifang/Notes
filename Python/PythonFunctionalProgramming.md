@@ -54,7 +54,7 @@ print map(format_name, ['adam', 'LISA', 'barT'])
 **reduce()函数**：
 
 接收的参数和map()类似，一个函数f，一个list。
-但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果。
+但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果
 
 *demo1*：
 
@@ -113,7 +113,7 @@ def is_sqr(x):
 **sorted()函数**：
 sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，
 比较函数的定义是，传入两个待比较的元素 x, y；
-如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。
+如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0
 
 *demo1*：
 
@@ -283,6 +283,7 @@ print factorial(10)
 ##### 2).有参数的decorator（三层嵌套decorator）
 
 带参数的log函数首先返回一个decorator函数，再让这个decorator函数接收my_func并返回新函数
+
 *demo1*：
 
 ```python
