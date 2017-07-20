@@ -19,6 +19,7 @@
 函数名 就是指向函数的一个变量 和普通变量没有区别
 
 **高阶函数**：能接受函数作为参数的函数
+
 *demo*：
 
 ```python
@@ -30,6 +31,7 @@ def add(x, y, f)
 ```
 
 **map()函数**：
+
 *demo*1:
 
 ```python
@@ -52,7 +54,7 @@ print map(format_name, ['adam', 'LISA', 'barT'])
 **reduce()函数**：
 
 接收的参数和map()类似，一个函数f，一个list。
-但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果。
+但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果
 *demo1*：
 
 ```python
@@ -75,6 +77,7 @@ print reduce(prod, [2, 4, 5, 7, 12])
 **filter()函数**：
 fileter()函数接收一个函数f和一个list，函数f的作用是对list中每一个元素进行判断，返回True或False
 filter()根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新list
+
 *demo1*：
 
 ```python
@@ -109,7 +112,7 @@ def is_sqr(x):
 **sorted()函数**：
 sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，
 比较函数的定义是，传入两个待比较的元素 x, y；
-如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。
+如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0
 
 *demo1*：
 
@@ -128,6 +131,7 @@ def reversed_cmp(x, y): #实现倒序
 ```
 
 **python中返回函数**：
+
 *demo1*：
 
 ```python
@@ -278,6 +282,7 @@ print factorial(10)
 ##### 2).有参数的decorator（三层嵌套decorator）
 
 带参数的log函数首先返回一个decorator函数，再让这个decorator函数接收my_func并返回新函数
+
 *demo1*：
 
 ```python
@@ -328,6 +333,7 @@ print factorial(10)
 ##### 3).完善decorator#####
 
 Python内置的functools可以用来自动化完成这个“复制”函数属性的任务
+
 *demo1*：
 
 ```python
@@ -414,6 +420,7 @@ xiaoming = Person('Xiao Ming', 'Male', '1990-1-1', job='Student')
 
 实例属性每个实例各自拥有，互相独立，而类属性有且只有一份。
 当实例属性和类属性重名时，实例属性优先级高
+
 *demo1*：
 
 ```python
