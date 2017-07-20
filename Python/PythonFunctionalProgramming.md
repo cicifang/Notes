@@ -78,6 +78,7 @@ print reduce(prod, [2, 4, 5, 7, 12])
 **filter()函数**：
 fileter()函数接收一个函数f和一个list，函数f的作用是对list中每一个元素进行判断，返回True或False
 filter()根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新list
+
 *demo1*：
 
 ```python
@@ -131,6 +132,7 @@ def reversed_cmp(x, y): #实现倒序
 ```
 
 **python中返回函数**：
+
 *demo1*：
 
 ```python
@@ -258,7 +260,7 @@ def factorial(n):  #阶乘
 print factorial(10)
 ```
 
-*demo1*：
+*demo2*：
 
 ```python
 #计算函数调用的时间可以记录调用前后的当前时间戳，然后计算两个时间戳的差
@@ -331,6 +333,7 @@ print factorial(10)
 ##### 3).完善decorator#####
 
 Python内置的functools可以用来自动化完成这个“复制”函数属性的任务
+
 *demo1*：
 
 ```python
@@ -403,6 +406,7 @@ print sorted_ignore_case(['bob', 'about', 'Zoo', 'Credit'])
 
 
 **python 定义类**
+
 当创建实例时，__init__()方法被自动调用
 ```Python
 class Person(object):
@@ -417,6 +421,7 @@ xiaoming = Person('Xiao Ming', 'Male', '1990-1-1', job='Student')
 
 实例属性每个实例各自拥有，互相独立，而类属性有且只有一份。
 当实例属性和类属性重名时，实例属性优先级高
+
 *demo1*：
 
 ```python
@@ -542,6 +547,7 @@ print p.course
 ```
 
 **特殊方法**：
+
 任何数据类型的实例都有一个特殊方法`  __str__()`
 
 `print lst` <=> `print lst.__str__()`
@@ -600,9 +606,7 @@ class Student(object):
         self.__score = score
 ```
 
- 注意: 第一个score(self)是get方法，用@property装饰，
- 	   第二个score(self, score)是set方法，用@score.setter装饰，
-​	   @score.setter是前一个@property装饰后的副产品。
+ 注意: 第一个score(self)是get方法，用@property装饰，第二个score(self, score)是set方法，用@score.setter装饰，@score.setter是前一个@property装饰后的副产品。
 
 ```python
 >>> s = Student('Bob', 59)
