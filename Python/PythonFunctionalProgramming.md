@@ -19,6 +19,7 @@
 函数名 就是指向函数的一个变量 和普通变量没有区别
 
 **高阶函数**：能接受函数作为参数的函数
+
 *demo*：
 
 ```python
@@ -30,6 +31,7 @@ def add(x, y, f)
 ```
 
 **map()函数**
+
 *demo*1:
 
 ```python
@@ -53,6 +55,7 @@ print map(format_name, ['adam', 'LISA', 'barT'])
 
 接收的参数和map()类似，一个函数f，一个list。
 但行为不同，reduce()传入函数f的参数必须接受两个参数，reduce()对list的每个参数反复调用函数f，并返回最终结果。
+
 *demo1*：
 
 ```python
